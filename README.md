@@ -3,7 +3,7 @@
 Modern portfolio website built with Node.js, Express, and EJS. Features responsive design, dark/light theme, and contact form.
 
 ## 🌐 Live Site
-**https://portfolio-v1je.onrender.com/**
+**https://romanportfol.netlify.app/**
 
 ## 🚀 Tech Stack
 - **Backend:** Node.js, Express.js
