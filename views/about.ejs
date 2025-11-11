@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - <%= name %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cosmic-bg"></div>
+    
+    <header class="header">
+        <nav class="nav container">
+            <a href="/" class="logo">
+                <span class="logo-accent">K</span>ostiyk
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/projects-page">Projects</a></li>
+                <li><a href="/skills">Skills</a></li>
+                <li><a href="/about" class="active">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><button class="theme-toggle">🌙</button></li>
+            </ul>
+            <button class="burger-menu">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <button class="close-menu">×</button>
+        <ul class="mobile-nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/projects-page">Projects</a></li>
+            <li><a href="/skills">Skills</a></li>
+            <li><a href="/about" class="active">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <button class="mobile-theme-toggle">🌙 Switch to Light</button>
+    </div>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="section-header">
+                        <span class="section-subtitle">Get to Know Me</span>
+                        <h2 class="section-title">About Me</h2>
+                    </div>
+                    
+                    <div class="project-card">
+                        <!-- Add your photo here -->
+                        <div class="photo-container">
+                            <img src="/images/photo.jpg" alt="<%= name %>" class="profile-photo">
+                        </div>
+                        
+                        <h3 style="color: var(--accent-primary); margin-bottom: 1.5rem;">Hello! I'm <%= name %></h3>
+                        <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem; color: var(--text-secondary);">
+                            <%= bio %>
+                        </p>
+                        
+                        <div style="display: grid; gap: 2rem;">
+                            <div>
+                                <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">Education</h4>
+                                <p style="color: var(--text-secondary);"><%= education %></p>
+                            </div>
+                            
+                            <div>
+                                <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">Location</h4>
+                                <p style="color: var(--text-secondary);"><%= location %></p>
+                            </div>
+                            
+                            <div>
+                                <h4 style="color: var(--accent-primary); margin-bottom: 1.5rem;">Experience</h4>
+                                <% experience.forEach(exp => { %>
+                                <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 10px;">
+                                    <h5 style="color: var(--text-primary); margin-bottom: 0.5rem;">
+                                        <%= exp.role %> at <%= exp.company %>
+                                    </h5>
+                                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;">
+                                        <%= exp.period %>
+                                    </p>
+                                    <p style="color: var(--text-secondary); line-height: 1.6;">
+                                        <%= exp.description %>
+                                    </p>
+                                </div>
+                                <% }) %>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-buttons" style="justify-content: center; margin-top: 2rem;">
+                            <a href="/files/Roman_Kostyuk_CV.pdf" download class="btn btn-primary">
+                                Download My CV
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <span class="logo-accent">K</span>ostiyk Roman
+                    </a>
+                    <p class="footer-description">
+                        Software engineering student building foundational skills in 2025.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/projects-page">Projects</a></li>
+                        <li><a href="/skills">Skills</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="<%= socialLinks.github %>" target="_blank">GitHub</a></li>
+                        <li><a href="<%= socialLinks.linkedin %>" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kostiyk Roman. Crafted with passion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

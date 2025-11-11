@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - <%= name %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cosmic-bg"></div>
+    
+    <header class="header">
+        <nav class="nav container">
+            <a href="/" class="logo">
+                <span class="logo-accent">K</span>ostiyk
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/projects-page" class="active">Projects</a></li>
+                <li><a href="/skills">Skills</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><button class="theme-toggle">🌙</button></li>
+            </ul>
+            <button class="burger-menu">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <button class="close-menu">×</button>
+        <ul class="mobile-nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/projects-page">Projects</a></li>
+            <li><a href="/skills">Skills</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact" class="active">Contact</a></li>
+        </ul>
+        <button class="mobile-theme-toggle">🌙 Switch to Light</button>
+    </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">My Learning Journey</span>
+                    <h2 class="section-title">Projects & Practice</h2>
+                </div>
+                
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <div class="project-card" style="margin-bottom: 3rem;">
+                        <h3 style="color: var(--accent-primary); margin-bottom: 1.5rem;">🚧 Building My First Projects</h3>
+                        <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem; color: var(--text-secondary);">
+                            I'm currently working on my first web development projects as part of my learning journey. 
+                            Each project helps me understand new concepts and improve my coding skills.
+                        </p>
+                        
+                        <div style="background: var(--bg-secondary); padding: 2rem; border-radius: 15px; margin-bottom: 2rem;">
+                            <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">🎯 Current Focus:</h4>
+                            <ul style="text-align: left; color: var(--text-secondary); line-height: 1.8;">
+                                <li>Learning HTML, CSS, and JavaScript fundamentals</li>
+                                <li>Building simple responsive websites</li>
+                                <li>Practicing with Node.js and Express</li>
+                                <li>Understanding version control with Git</li>
+                                <li>Exploring frontend frameworks</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 style="color: var(--accent-primary); margin-bottom: 1.5rem;">📚 Learning Through Practice</h3>
+                        <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem; color: var(--text-secondary);">
+                            As I continue learning, I'm building small projects to apply my knowledge. 
+                            Check back soon to see my progress and completed projects!
+                        </p>
+                        
+                        <div class="hero-buttons">
+                            <a href="<%= socialLinks.github %>" class="btn btn-primary" target="_blank">
+                                Follow My Progress
+                            </a>
+                            <a href="/skills" class="btn btn-outline">
+                                View My Skills
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <span class="logo-accent">K</span>ostiyk Roman
+                    </a>
+                    <p class="footer-description">
+                        Software engineering student building foundational skills in 2025.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/projects">Projects</a></li>
+                        <li><a href="/skills">Skills</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="<%= socialLinks.github %>" target="_blank">GitHub</a></li>
+                        <li><a href="<%= socialLinks.linkedin %>" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kostiyk Roman. Crafted with passion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

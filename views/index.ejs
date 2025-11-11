@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= name %> - Software Engineer</title>
+    <meta name="description" content="<%= hero.description %>">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cosmic-bg"></div>
+    
+    <header class="header">
+        <nav class="nav container">
+            <a href="/" class="logo">
+                <span class="logo-accent">K</span>ostiyk
+            </a>
+            <ul class="nav-links">
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/projects-page">Projects</a></li>
+                <li><a href="/skills">Skills</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><button class="theme-toggle">🌙</button></li>
+            </ul>
+            <button class="burger-menu">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <button class="close-menu">×</button>
+        <ul class="mobile-nav-links">
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/projects-page">Projects</a></li>
+            <li><a href="/skills">Skills</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <button class="mobile-theme-toggle">🌙 Switch to Light</button>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <!-- Add your photo here -->
+                    <div class="photo-container">
+                        <img src="/images/photo.jpg" alt="<%= name %>" class="profile-photo">
+                    </div>
+                    
+                    <span class="hero-badge"><%= hero.badge %></span>
+                    <h1 class="hero-title"><%= hero.title %></h1>
+                    <p class="hero-subtitle"><%= hero.subtitle %></p>
+                    <p class="hero-description"><%= hero.description %></p>
+                    
+                    <div class="hero-stats">
+                        <% hero.stats.forEach(stat => { %>
+                        <div class="stat-item">
+                            <span class="stat-number"><%= stat.number %></span>
+                            <span class="stat-label"><%= stat.label %></span>
+                        </div>
+                        <% }) %>
+                    </div>
+                    
+                    <div class="hero-buttons">
+                        <a href="/projects-page" class="btn btn-primary">
+                            View My Projects
+                        </a>
+                        <a href="/files/Roman_Kostyuk_CV.pdf" download class="btn btn-outline">
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">My Focus in 2025</span>
+                    <h2 class="section-title">Projects & Learning</h2>
+                </div>
+                
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <div class="project-card">
+                        <h3 style="color: var(--accent-primary); margin-bottom: 1.5rem;">Starting My Journey in 2025</h3>
+                        <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem; color: var(--text-secondary);">
+                            I'm at the beginning of my web development journey, focused on learning the fundamentals and building my first projects. 
+                            Every day brings new challenges and opportunities to grow as a developer.
+                        </p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎯</div>
+                                <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Foundation First</h4>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Mastering HTML, CSS, and JavaScript basics</p>
+                            </div>
+                            
+                            <div style="text-align: center;">
+                                <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🚀</div>
+                                <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">First Projects</h4>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Building initial applications and websites</p>
+                            </div>
+                            
+                            <div style="text-align: center;">
+                                <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📚</div>
+                                <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Continuous Learning</h4>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Expanding knowledge daily</p>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-buttons" style="justify-content: center; margin-top: 2rem;">
+                            <a href="/skills" class="btn btn-primary">View My Skills</a>
+                            <a href="/projects-page" class="btn btn-outline">View All Projects</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">My Current Skills</span>
+                    <h2 class="section-title">Skills & Technologies</h2>
+                </div>
+                
+                <div class="skills-grid">
+                    <% skills.forEach(skill => { %>
+                    <div class="skill-category fade-in">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                            <h3 style="color: var(--accent-primary); margin: 0; font-size: 1.3rem;"><%= skill.name %></h3>
+                            <span class="skill-level-<%= skill.level.toLowerCase() %>">
+                                <%= skill.level %>
+                            </span>
+                        </div>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                            <%= skill.description %>
+                        </p>
+                        <div class="skill-items">
+                            <% skill.technologies.forEach(tech => { %>
+                            <span class="skill-item-tag <%= skill.level === 'Learning' ? 'learning' : '' %>">
+                                <%= tech %>
+                            </span>
+                            <% }) %>
+                        </div>
+                    </div>
+                    <% }) %>
+                </div>
+
+                <div style="text-align: center; margin-top: 4rem;">
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem;">
+                        Building my skills step by step. Focused on learning fundamentals before moving to advanced concepts.
+                    </p>
+                    <a href="/skills" class="btn btn-outline">View Detailed Skills</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <span class="logo-accent">K</span>ostiyk Roman
+                    </a>
+                    <p class="footer-description">
+                        Software engineering student beginning the web development journey in 2025.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/projects-page">Projects</a></li>
+                        <li><a href="/skills">Skills</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="<%= socialLinks.github %>" target="_blank">GitHub</a></li>
+                        <li><a href="<%= socialLinks.linkedin %>" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kostiyk Roman. Crafted with passion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

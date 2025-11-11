@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Sent - <%= name %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cosmic-bg"></div>
+    
+    <header class="header">
+        <nav class="nav container">
+            <a href="/" class="logo">
+                <span class="logo-accent">K</span>ostiyk
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/projects-page">Projects</a></li>
+                <li><a href="/skills">Skills</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><button class="theme-toggle">🌙</button></li>
+            </ul>
+            <button class="burger-menu">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <button class="close-menu">×</button>
+        <ul class="mobile-nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/projects-page">Projects</a></li>
+            <li><a href="/skills">Skills</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <button class="mobile-theme-toggle">🌙 Switch to Light</button>
+    </div>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                    <div class="project-card">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">✅</div>
+                        <h1 style="color: var(--success); margin-bottom: 1rem;">Message Sent Successfully!</h1>
+                        <p style="font-size: 1.1rem; margin-bottom: 2rem; color: var(--text-secondary); line-height: 1.6;">
+                            Thank you for your message! I'll get back to you as soon as possible.
+                        </p>
+                        
+                        <% if (formData) { %>
+                        <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem; text-align: left;">
+                            <h3 style="margin-bottom: 1rem; color: var(--accent-primary);">Message Details:</h3>
+                            <p style="margin-bottom: 0.5rem;"><strong>Name:</strong> <%= formData.name %></p>
+                            <p style="margin-bottom: 0.5rem;"><strong>Email:</strong> <%= formData.email %></p>
+                            <p style="margin-bottom: 0;"><strong>Message:</strong></p>
+                            <p style="color: var(--text-secondary); margin-top: 0.5rem;"><%= formData.message %></p>
+                        </div>
+                        <% } %>
+                        
+                        <div class="hero-buttons" style="justify-content: center;">
+                            <a href="/" class="btn btn-primary">Back to Home</a>
+                            <a href="/contact" class="btn btn-outline">Send Another Message</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <span class="logo-accent">K</span>ostiyk Roman
+                    </a>
+                    <p class="footer-description">
+                        Software engineering student passionate about creating digital solutions that make a difference.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/projects-page">Projects</a></li>
+                        <li><a href="/skills">Skills</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="<%= socialLinks.github %>" target="_blank">GitHub</a></li>
+                        <li><a href="<%= socialLinks.linkedin %>" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kostiyk Roman. Crafted with passion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

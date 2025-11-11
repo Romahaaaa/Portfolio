@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - <%= name %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cosmic-bg"></div>
+    
+    <header class="header">
+        <nav class="nav container">
+            <a href="/" class="logo">
+                <span class="logo-accent">K</span>ostiyk
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/projects-page">Projects</a></li>
+                <li><a href="/skills" class="active">Skills</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><button class="theme-toggle">🌙</button></li>
+            </ul>
+            <button class="burger-menu">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <button class="close-menu">×</button>
+        <ul class="mobile-nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/projects-page">Projects</a></li>
+            <li><a href="/skills" class="active">Skills</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <button class="mobile-theme-toggle">🌙 Switch to Light</button>
+    </div>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">My 2025 Tech Stack</span>
+                    <h2 class="section-title">Skills & Expertise</h2>
+                </div>
+                
+                <div class="skills-grid">
+                    <% skills.forEach(skill => { %>
+                    <div class="skill-category fade-in">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                            <h3 style="color: var(--accent-primary); margin: 0; font-size: 1.4rem;"><%= skill.name %></h3>
+                            <span class="skill-level-<%= skill.level.toLowerCase() %>">
+                                <%= skill.level %>
+                            </span>
+                        </div>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6; font-size: 1.1rem;">
+                            <%= skill.description %>
+                        </p>
+                        <div class="skill-items">
+                            <% skill.technologies.forEach(tech => { %>
+                            <span class="skill-item-tag <%= skill.level === 'Learning' ? 'learning' : '' %>">
+                                <%= tech %>
+                            </span>
+                            <% }) %>
+                        </div>
+                    </div>
+                    <% }) %>
+                </div>
+
+                <div style="text-align: center; margin-top: 4rem;">
+                    <div style="background: var(--bg-card); padding: 2rem; border-radius: 15px; border: 1px solid var(--border-color); max-width: 600px; margin: 0 auto;">
+                        <h3 style="color: var(--accent-primary); margin-bottom: 1rem;">🎯 My Learning Philosophy</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 0;">
+                            I believe in continuous learning and practical application. Rather than focusing on arbitrary percentages, 
+                            I measure my skills by what I can build and the problems I can solve. Each technology I learn is a tool 
+                            to create better solutions and deliver value.
+                        </p>
+                    </div>
+                    
+                    <div class="hero-buttons" style="justify-content: center; margin-top: 3rem;">
+                        <a href="/projects-page" class="btn btn-primary">See My Projects</a>
+                        <a href="/contact" class="btn btn-outline">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <span class="logo-accent">K</span>ostiyk Roman
+                    </a>
+                    <p class="footer-description">
+                        Software engineering student building modern web development skills in 2025.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/projects-page">Projects</a></li>
+                        <li><a href="/skills">Skills</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="<%= socialLinks.github %>" target="_blank">GitHub</a></li>
+                        <li><a href="<%= socialLinks.linkedin %>" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kostiyk Roman. Crafted with passion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
