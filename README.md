@@ -3,7 +3,7 @@
 Professional portfolio website built with modern web technologies. Features a responsive design, dark/light theme toggle, and contact form.
 
 ## 🌐 Live Demo
-[![Live Demo](https://img.shields.io/badge/Live_Demo-View_Site-blue?style=for-the-badge)](https://your-deployed-link-here)
+[![Live Demo](https://portfolio-v1je.onrender.com/)
 
 ## 🛠️ Technologies Used
 
@@ -137,7 +137,7 @@ Kostiyk Roman
 
 GitHub: @Romahaaaa
 
-LinkedIn: Roman Kostyuk
+LinkedIn: Роман Костюк
 
 📄 License
 This project is open source and available under the MIT License.
