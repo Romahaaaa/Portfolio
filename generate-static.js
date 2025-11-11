@@ -86,98 +86,206 @@ function copyPublicFolder() {
   }
 }
 
-// Generate HTML from EJS template
-function generateHTML(templateName, outputName, data) {
-  try {
-    const ejsContent = fs.readFileSync(path.join(__dirname, 'views', `${templateName}.ejs`), 'utf8');
-    
-    // Simple EJS variable replacement
-    let htmlContent = ejsContent
-      .replace(/<%= name %>/g, data.name)
-      .replace(/<%= role %>/g, data.role)
-      .replace(/<%= hero\.badge %>/g, data.hero.badge)
-      .replace(/<%= hero\.title %>/g, data.hero.title)
-      .replace(/<%= hero\.subtitle %>/g, data.hero.subtitle)
-      .replace(/<%= hero\.description %>/g, data.hero.description)
-      .replace(/<%= bio %>/g, data.bio)
-      .replace(/<%= education %>/g, data.education)
-      .replace(/<%= location %>/g, data.location)
-      .replace(/<%= socialLinks\.github %>/g, data.socialLinks.github)
-      .replace(/<%= socialLinks\.linkedin %>/g, data.socialLinks.linkedin);
-
-    // Handle skills
-    htmlContent = htmlContent.replace(/<% skills\.forEach\(skill => { %>[\s\S]*?<% }) %>/g, 
-      data.skills.map(skill => `
-        <div class="skill-category">
-          <h3>${skill.name}</h3>
-          <span class="skill-level-${skill.level.toLowerCase()}">${skill.level}</span>
-          <p>${skill.description}</p>
-          <div class="skill-items">
-            ${skill.technologies.map(tech => `<span class="skill-item-tag">${tech}</span>`).join('')}
-          </div>
-        </div>
-      `).join(''));
-
-    // Handle experience
-    htmlContent = htmlContent.replace(/<% experience\.forEach\(exp => { %>[\s\S]*?<% }) %>/g,
-      data.experience.map(exp => `
-        <div class="experience-item">
-          <h4>${exp.role} at ${exp.company}</h4>
-          <p class="period">${exp.period}</p>
-          <p>${exp.description}</p>
-        </div>
-      `).join(''));
-
-    // Handle hero stats
-    htmlContent = htmlContent.replace(/<% hero\.stats\.forEach\(stat => { %>[\s\S]*?<% }) %>/g,
-      data.hero.stats.map(stat => `
-        <div class="stat-item">
-          <span class="stat-number">${stat.number}</span>
-          <span class="stat-label">${stat.label}</span>
-        </div>
-      `).join(''));
-
-    const fullHtml = `<!DOCTYPE html>
+// Generate basic HTML pages
+function generateBasicPages() {
+  // Generate index.html
+  const indexHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${outputName} - ${data.name}</title>
-    <meta name="description" content="${data.hero.description}">
+    <title>Kostiyk Roman - Software Engineer</title>
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    ${htmlContent}
+    <div class="cosmic-bg"></div>
+    
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">
+                <span class="logo-accent">K</span>ostiyk
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="projects-page.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button class="theme-toggle">🌙</button></li>
+            </ul>
+            <button class="burger-menu">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <span class="hero-badge">${portfolioData.hero.badge}</span>
+                    <h1 class="hero-title">${portfolioData.hero.title}</h1>
+                    <p class="hero-subtitle">${portfolioData.hero.subtitle}</p>
+                    <p class="hero-description">${portfolioData.hero.description}</p>
+                    
+                    <div class="hero-stats">
+                        ${portfolioData.hero.stats.map(stat => `
+                        <div class="stat-item">
+                            <span class="stat-number">${stat.number}</span>
+                            <span class="stat-label">${stat.label}</span>
+                        </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="hero-buttons">
+                        <a href="projects-page.html" class="btn btn-primary">View My Projects</a>
+                        <a href="./files/Roman_Kostyuk_CV.pdf" download class="btn btn-outline">Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-accent">K</span>ostiyk Roman
+                    </a>
+                    <p class="footer-description">Software engineering student building modern web development skills.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="projects-page.html">Projects</a></li>
+                        <li><a href="skills.html">Skills</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="${portfolioData.socialLinks.github}" target="_blank">GitHub</a></li>
+                        <li><a href="${portfolioData.socialLinks.linkedin}" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="./js/script.js"></script>
 </body>
 </html>`;
-    
-    fs.writeFileSync(path.join(distDir, `${outputName}.html`), fullHtml);
-    console.log(`✅ Generated ${outputName}.html`);
-  } catch (error) {
-    console.log(`❌ Error generating ${outputName}.html:`, error.message);
-  }
-}
 
-// Generate all pages
-function generateAllPages() {
-  const pages = [
-    { template: 'index', output: 'index' },
-    { template: 'projects-page', output: 'projects-page' },
-    { template: 'skills', output: 'skills' },
-    { template: 'about', output: 'about' },
-    { template: 'contact', output: 'contact' }
+  fs.writeFileSync(path.join(distDir, 'index.html'), indexHtml);
+  console.log('✅ Generated index.html');
+
+  // Generate skills.html
+  const skillsHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Kostiyk Roman</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cosmic-bg"></div>
+    
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">
+                <span class="logo-accent">K</span>ostiyk
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects-page.html">Projects</a></li>
+                <li><a href="skills.html" class="active">Skills</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button class="theme-toggle">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">My Tech Stack</span>
+                    <h2 class="section-title">Skills & Technologies</h2>
+                </div>
+                
+                <div class="skills-grid">
+                    ${portfolioData.skills.map(skill => `
+                    <div class="skill-category fade-in">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                            <h3 style="color: var(--accent-primary); margin: 0; font-size: 1.4rem;">${skill.name}</h3>
+                            <span class="skill-level-${skill.level.toLowerCase()}">${skill.level}</span>
+                        </div>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6; font-size: 1.1rem;">
+                            ${skill.description}
+                        </p>
+                        <div class="skill-items">
+                            ${skill.technologies.map(tech => `<span class="skill-item-tag ${skill.level === 'Learning' ? 'learning' : ''}">${tech}</span>`).join('')}
+                        </div>
+                    </div>
+                    `).join('')}
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>`;
+
+  fs.writeFileSync(path.join(distDir, 'skills.html'), skillsHtml);
+  console.log('✅ Generated skills.html');
+
+  // Generate other pages similarly...
+  // For now, create simple placeholder pages
+  const simplePages = [
+    { name: 'projects-page', title: 'Projects - Kostiyk Roman' },
+    { name: 'about', title: 'About - Kostiyk Roman' },
+    { name: 'contact', title: 'Contact - Kostiyk Roman' }
   ];
 
-  pages.forEach(page => {
-    generateHTML(page.template, page.output, portfolioData);
+  simplePages.forEach(page => {
+    const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${page.title}</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="cosmic-bg"></div>
+    <div style="text-align: center; padding: 100px;">
+        <h1>${page.title}</h1>
+        <p>Page coming soon...</p>
+        <a href="index.html">Back to Home</a>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>`;
+    fs.writeFileSync(path.join(distDir, `${page.name}.html`), html);
+    console.log(`✅ Generated ${page.name}.html`);
   });
 }
 
 // Execute
 console.log('🚀 Generating static site...');
 copyPublicFolder();
-generateAllPages();
+generateBasicPages();
 console.log('🎉 All pages generated in dist/ folder!');
-console.log('📁 Ready for Netlify deployment');
