@@ -23,15 +23,33 @@
                 <li><a href="contact.html">Contact</a></li>
                 <li><button class="theme-toggle">🌙</button></li>
             </ul>
+            <button class="burger-menu">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </button>
         </nav>
     </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <button class="close-menu">×</button>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects-page.html">Projects</a></li>
+            <li><a href="skills.html" class="active">Skills</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="mobile-theme-toggle">🌙 Switch to Light</button>
+    </div>
 
     <main>
         <section class="section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-subtitle">My Tech Stack</span>
-                    <h2 class="section-title">Skills & Technologies</h2>
+                    <span class="section-subtitle">My 2025 Tech Stack</span>
+                    <h2 class="section-title">Skills & Expertise</h2>
                 </div>
                 
                 <div class="skills-grid">
@@ -89,9 +107,63 @@
                     </div>
                     
                 </div>
+
+                <div style="text-align: center; margin-top: 4rem;">
+                    <div style="background: var(--bg-card); padding: 2rem; border-radius: 15px; border: 1px solid var(--border-color); max-width: 600px; margin: 0 auto;">
+                        <h3 style="color: var(--accent-primary); margin-bottom: 1rem;">🎯 My Learning Philosophy</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 0;">
+                            I believe in continuous learning and practical application. Rather than focusing on arbitrary percentages, 
+                            I measure my skills by what I can build and the problems I can solve. Each technology I learn is a tool 
+                            to create better solutions and deliver value.
+                        </p>
+                    </div>
+                    
+                    <div class="hero-buttons" style="justify-content: center; margin-top: 3rem;">
+                        <a href="projects-page.html" class="btn btn-primary">See My Projects</a>
+                        <a href="contact.html" class="btn btn-outline">Get In Touch</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-accent">K</span>ostiyk Roman
+                    </a>
+                    <p class="footer-description">
+                        Software engineering student building modern web development skills in 2025.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="projects-page.html">Projects</a></li>
+                        <li><a href="skills.html">Skills</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="https://github.com/Romahaaaa" target="_blank">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/роман-костюк-528835398" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kostiyk Roman. Crafted with passion.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="./js/script.js"></script>
 </body>

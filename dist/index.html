@@ -31,10 +31,29 @@
         </nav>
     </header>
 
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <button class="close-menu">×</button>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="projects-page.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="mobile-theme-toggle">🌙 Switch to Light</button>
+    </div>
+
     <main>
+        <!-- Hero Section -->
         <section class="hero">
             <div class="container">
                 <div class="hero-content fade-in">
+                    <!-- Profile Photo -->
+                    <div class="photo-container">
+                        <img src="./images/photo.jpg" alt="Kostiyk Roman" class="profile-photo">
+                    </div>
+                    
                     <span class="hero-badge">Looking for Opportunities in 2025</span>
                     <h1 class="hero-title">Building My Future in Tech</h1>
                     <p class="hero-subtitle">Student • Developer • Learner</p>
@@ -66,8 +85,127 @@
                 </div>
             </div>
         </section>
+
+        <!-- Projects Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">My Focus in 2025</span>
+                    <h2 class="section-title">Projects & Learning</h2>
+                </div>
+                
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <div class="project-card">
+                        <h3 style="color: var(--accent-primary); margin-bottom: 1.5rem;">Starting My Journey in 2025</h3>
+                        <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem; color: var(--text-secondary);">
+                            I'm at the beginning of my web development journey, focused on learning the fundamentals and building my first projects. 
+                            Every day brings new challenges and opportunities to grow as a developer.
+                        </p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎯</div>
+                                <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Foundation First</h4>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Mastering HTML, CSS, and JavaScript basics</p>
+                            </div>
+                            
+                            <div style="text-align: center;">
+                                <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🚀</div>
+                                <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">First Projects</h4>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Building initial applications and websites</p>
+                            </div>
+                            
+                            <div style="text-align: center;">
+                                <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📚</div>
+                                <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Continuous Learning</h4>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Expanding knowledge daily</p>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-buttons" style="justify-content: center; margin-top: 2rem;">
+                            <a href="skills.html" class="btn btn-primary">View My Skills</a>
+                            <a href="projects-page.html" class="btn btn-outline">View All Projects</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">My Current Skills</span>
+                    <h2 class="section-title">Skills & Technologies</h2>
+                </div>
+                
+                <div class="skills-grid">
+                    
+                    <div class="skill-category fade-in">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                            <h3 style="color: var(--accent-primary); margin: 0; font-size: 1.3rem;">Frontend Development</h3>
+                            <span class="skill-level-proficient">Proficient</span>
+                        </div>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                            Creating responsive and interactive user interfaces
+                        </p>
+                        <div class="skill-items">
+                            <span class="skill-item-tag ">HTML5</span><span class="skill-item-tag ">CSS3</span><span class="skill-item-tag ">JavaScript</span><span class="skill-item-tag ">EJS</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category fade-in">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                            <h3 style="color: var(--accent-primary); margin: 0; font-size: 1.3rem;">Backend Development</h3>
+                            <span class="skill-level-proficient">Proficient</span>
+                        </div>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                            Building server-side applications and APIs
+                        </p>
+                        <div class="skill-items">
+                            <span class="skill-item-tag ">Node.js</span><span class="skill-item-tag ">Express.js</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category fade-in">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                            <h3 style="color: var(--accent-primary); margin: 0; font-size: 1.3rem;">Tools & Development</h3>
+                            <span class="skill-level-proficient">Proficient</span>
+                        </div>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                            Development tools and workflow management
+                        </p>
+                        <div class="skill-items">
+                            <span class="skill-item-tag ">Git</span><span class="skill-item-tag ">GitHub</span><span class="skill-item-tag ">VS Code</span><span class="skill-item-tag ">Postman</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category fade-in">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                            <h3 style="color: var(--accent-primary); margin: 0; font-size: 1.3rem;">Currently Learning</h3>
+                            <span class="skill-level-learning">Learning</span>
+                        </div>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                            Expanding my skill set with modern technologies
+                        </p>
+                        <div class="skill-items">
+                            <span class="skill-item-tag learning">React</span><span class="skill-item-tag learning">Next.js</span><span class="skill-item-tag learning">TypeScript</span><span class="skill-item-tag learning">MongoDB</span>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div style="text-align: center; margin-top: 4rem;">
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem;">
+                        Building my skills step by step. Focused on learning fundamentals before moving to advanced concepts.
+                    </p>
+                    <a href="skills.html" class="btn btn-outline">View Detailed Skills</a>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -75,7 +213,9 @@
                     <a href="index.html" class="logo">
                         <span class="logo-accent">K</span>ostiyk Roman
                     </a>
-                    <p class="footer-description">Software engineering student building modern web development skills.</p>
+                    <p class="footer-description">
+                        Software engineering student beginning the web development journey in 2025.
+                    </p>
                 </div>
                 
                 <div class="footer-links">
@@ -96,6 +236,10 @@
                         <li><a href="https://www.linkedin.com/in/роман-костюк-528835398" target="_blank">LinkedIn</a></li>
                     </ul>
                 </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kostiyk Roman. Crafted with passion.</p>
             </div>
         </div>
     </footer>

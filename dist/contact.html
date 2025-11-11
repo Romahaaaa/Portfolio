@@ -5,14 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Kostiyk Roman</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="cosmic-bg"></div>
-    <div style="text-align: center; padding: 100px;">
-        <h1>Contact - Kostiyk Roman</h1>
-        <p>Page coming soon...</p>
-        <a href="index.html">Back to Home</a>
-    </div>
+    
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">
+                <span class="logo-accent">K</span>ostiyk
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects-page.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><button class="theme-toggle">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Contact Form -->
+                    <div class="contact-form">
+                        <h2 style="margin-bottom: 2rem; color: var(--text-primary);">Send Me a Message</h2>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label class="form-label">Name *</label>
+                                <input type="text" name="name" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Email *</label>
+                                <input type="email" name="email" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Message *</label>
+                                <textarea name="message" class="form-input" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <h3>Get In Touch</h3>
+                            <p style="color: var(--text-secondary); line-height: 1.6;">
+                                I'm always open to discussing new opportunities, collaborations, or just having a chat about technology and programming.
+                            </p>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <h3>Connect With Me</h3>
+                            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                                <a href="https://github.com/Romahaaaa" target="_blank" 
+                                   class="btn btn-outline" style="justify-content: center;">
+                                    GitHub
+                                </a>
+                                
+                                <a href="https://www.linkedin.com/in/роман-костюк-528835398" target="_blank" 
+                                   class="btn btn-outline" style="justify-content: center;">
+                                    LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <h3>Response Time</h3>
+                            <p style="color: var(--text-secondary);">
+                                I typically respond to messages within 24-48 hours. Looking forward to connecting with you!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-accent">K</span>ostiyk Roman
+                    </a>
+                    <p class="footer-description">
+                        Software engineering student passionate about creating digital solutions that make a difference.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="projects-page.html">Projects</a></li>
+                        <li><a href="skills.html">Skills</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="https://github.com/Romahaaaa" target="_blank">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/роман-костюк-528835398" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kostiyk Roman. Crafted with passion.</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="./js/script.js"></script>
 </body>
 </html>
